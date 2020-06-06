@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "system_name" : "MSDSystem",
+  "policy_name" :  "MLPCategoricalPolicy",
+  "grid_parameters": "msd_grid",
+  "wrappers": { },
+  "input_size": 2,
+  "actions_size": 5,
+
+  "system_args": {
+
+    "equilibrium": 0.2,
+    "actions_value": [-0.3, -0.1, 0.0, 0.1, 0.3],
+    "target_parameters_reward": [0.5, -0.3, 0.1],
+    "cost_omega_zeta": [0.5, 0.5],
+    "accuracy": 1.0,
+    "omega_interval": [0.1, 1.5],
+    "zeta_interval": [0.1, 1.5],
+    "position_interval": [0.198, 0.202],
+    "speed_interval": [-0.01, 0.01],
+    "phi_interval": [-2.0, 2.0],
+    "actions_discretization": 0.05
+  },
+
+  "policy_args": {
+
+    "input_size": 2,
+    "n_output": 5,
+    "layers": [128],
+    "scale": [0.2, 0],
+    "normalize": [0.005, 0.02]
+  },
+
+  "model_name": "direct-mdp",
+  "horizon": 100,
+  "nb_iterations": 500,
+  "batch_size": 64,
+
+  "policy": true,
+  "system": true,
+  "learning_rate": 0.005,
+
+  "mc_samples": 100,
+
+  "logdir": "logs_msd/",
+  "save_agent": true,
+  "verbose": true
+}
